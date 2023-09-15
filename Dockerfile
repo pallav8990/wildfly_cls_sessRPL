@@ -1,4 +1,5 @@
 FROM jboss/wildfly
+RUN ls -ltr
 RUN /opt/jboss/wildfly/bin/add-user.sh admin redhat --silent
 ADD configuration/config-server.cli /opt/jboss/
 RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=config-server.cli
